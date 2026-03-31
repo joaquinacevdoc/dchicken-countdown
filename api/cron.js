@@ -6,7 +6,7 @@ const MILESTONE_EMAILS = {
     subject: "14 years until D'Chicken changes everything (no pressure)",
     body: `Hey,
 
-You signed up to wait. And wait you shall.
+You signed up to wait (or not). And wait you shall.
 
 It's March 30th, which means D'Chicken is officially 14 years away. That's a lot of time to think about crispy, golden, life-altering chicken and fries.
 
