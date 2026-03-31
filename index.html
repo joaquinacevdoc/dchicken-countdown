@@ -44,20 +44,6 @@
       filter: drop-shadow(0 4px 24px rgba(245, 166, 35, 0.25));
     }
 
-    /* Tagline */
-    .tagline {
-      background-color: #F5A623;
-      color: #000;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.12em;
-      padding: 0.45rem 2.5rem;
-      text-transform: uppercase;
-      border-radius: 3px;
-      box-shadow: 0 2px 16px rgba(245, 166, 35, 0.4);
-      margin-top: -0.5rem;
-    }
-
     /* Headline */
     .headline {
       font-family: 'Bebas Neue', sans-serif;
@@ -160,9 +146,7 @@
       <img src="./logo.png" alt="D'Chicken 4/2 logo" />
     </div>
 
-    <div class="tagline">Chicken and Fries</div>
-
-    <p class="headline">15-Year Countdown</p>
+    <p class="headline">Official Countdown</p>
 
     <div class="countdown" id="countdown">
       <div class="unit"><span class="number" id="years">00</span><span class="label">Years</span></div>
@@ -182,8 +166,9 @@
   </div>
 
   <script>
-    // Start date is fixed at page-load time; end date is exactly 15 years later
+    // Start date is 1 day before today; end date is exactly 15 years from start
     const start = new Date();
+    start.setDate(start.getDate() - 1);
     const end = new Date(start);
     end.setFullYear(end.getFullYear() + 15);
 
