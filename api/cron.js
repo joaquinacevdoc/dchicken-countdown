@@ -94,7 +94,7 @@ Keep the faith. Keep the hunger.
     subject: "8 years left. The fryer is dreaming of you.",
     body: `Hey,
 
-8 years from today, a fryer somewhere in Mexico City will heat up for the very first time — and it will be thinking of you.
+8 years from today, a fryer somewhere in Monterrey will heat up for the very first time — and it will be thinking of you.
 
 Dramatic? Maybe. True? Absolutely.
 
