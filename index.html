@@ -166,11 +166,8 @@
   </div>
 
   <script>
-    // Start date is 1 day before today; end date is exactly 15 years from start
-    const start = new Date();
-    start.setDate(start.getDate() - 1);
-    const end = new Date(start);
-    end.setFullYear(end.getFullYear() + 15);
+    // Fixed target: March 30, 2041 at 00:00:00 Mexico City time (UTC-6)
+    const end = new Date('2041-03-30T00:00:00-06:00');
 
     // Show target date in footer
     const opts = { year: 'numeric', month: 'long', day: 'numeric' };
