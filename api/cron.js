@@ -230,6 +230,24 @@ function getMexicoCityDate(now = new Date()) {
   return { year, month, day };
 }
 
+const APRIL_FOOL_EMAIL = {
+  subject: "No, this is not a joke. D'Chicken is coming. (Happy April 1st.)",
+  body: `Hey,
+
+April Fools' Day. The one day a year when you can't trust anything in your inbox.
+
+This is not one of those emails.
+
+D'Chicken is real. The countdown is real. And every March 30th from now until 2041, you'll get a reminder of just how real it is — and how many years you still have to wait.
+
+This email is just a test to make sure everything is working. The chicken is fine. The fryer is ready. The wait continues.
+
+15 years to go. Stay patient. Stay hungry.
+
+— The D'Chicken Countdown Team
+P.S. We promise we are not a prank.`,
+};
+
 export default async function handler(req, res) {
   // Security: validate CRON_SECRET
   const authHeader = req.headers['authorization'];
@@ -243,22 +261,34 @@ export default async function handler(req, res) {
 
   const { year, month, day } = getMexicoCityDate();
 
-  // Only proceed on March 30 (bypassed in test mode)
-  if (!isTestMode && (month !== 3 || day !== 30)) {
-    return res.status(200).json({ message: 'Not March 30 in Mexico City. Nothing to do.' });
+  const isMarch30 = month === 3 && day === 30;
+  const isApril1Test = month === 4 && day === 1 && year === 2026;
+
+  if (!isTestMode && !isMarch30 && !isApril1Test) {
+    return res.status(200).json({ message: 'Nothing to do today.' });
   }
 
-  // Calculate full years remaining until March 30, 2041
-  const yearsLeft = isTestMode ? testYears : 2041 - year;
+  let milestone;
+  let label;
 
-  // Only send for milestones 1–14
-  if (yearsLeft < 1 || yearsLeft > 14) {
-    return res.status(200).json({ message: `${yearsLeft} years left — no milestone email for this year.` });
-  }
-
-  const milestone = MILESTONE_EMAILS[yearsLeft];
-  if (!milestone) {
-    return res.status(200).json({ message: `No email template for ${yearsLeft} years left.` });
+  if (isTestMode) {
+    const yearsLeft = testYears;
+    if (yearsLeft < 1 || yearsLeft > 14) {
+      return res.status(200).json({ message: `${yearsLeft} years left — no milestone email for this value.` });
+    }
+    milestone = MILESTONE_EMAILS[yearsLeft];
+    label = `${yearsLeft} years left (test mode)`;
+  } else if (isApril1Test) {
+    milestone = APRIL_FOOL_EMAIL;
+    label = 'April 1 cron test';
+  } else {
+    // March 30 — real milestone
+    const yearsLeft = 2041 - year;
+    if (yearsLeft < 1 || yearsLeft > 14) {
+      return res.status(200).json({ message: `${yearsLeft} years left — no milestone email for this year.` });
+    }
+    milestone = MILESTONE_EMAILS[yearsLeft];
+    label = `${yearsLeft} years left`;
   }
 
   // Fetch subscribers from Supabase
@@ -305,7 +335,7 @@ export default async function handler(req, res) {
   const failed = results.filter(r => r.status !== 'sent').length;
 
   return res.status(200).json({
-    message: `Milestone: ${yearsLeft} years left. Sent ${sent}/${subscribers.length} emails.`,
+    message: `${label}. Sent ${sent}/${subscribers.length} emails.`,
     failed,
     results,
   });
