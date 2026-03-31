@@ -1,8 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 
-const TARGET_DATE = new Date('2041-03-30T00:00:00-06:00');
-
 const MILESTONE_EMAILS = {
   14: {
     subject: "14 years until D'Chicken changes everything (no pressure)",
@@ -264,7 +262,7 @@ export default async function handler(req, res) {
   }
 
   // Fetch subscribers from Supabase
-  const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
+  const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
   const { data: subscribers, error: dbError } = await supabase
     .from('countdown_subscribers')
     .select('email');
