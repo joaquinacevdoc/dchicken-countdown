@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D'Chicken 4/2 — Countdown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Oswald', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Logo */
+    .logo-wrap img {
+      max-width: 420px;
+      width: 90vw;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 24px rgba(245, 166, 35, 0.25));
+    }
+
+    /* Tagline */
+    .tagline {
+      background-color: #F5A623;
+      color: #000;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.12em;
+      padding: 0.45rem 2.5rem;
+      text-transform: uppercase;
+      border-radius: 3px;
+      box-shadow: 0 2px 16px rgba(245, 166, 35, 0.4);
+      margin-top: -0.5rem;
+    }
+
+    /* Headline */
+    .headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      letter-spacing: 0.2em;
+      color: #CC0000;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* Countdown grid */
+    .countdown {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .unit {
+      background: #111111;
+      border: 2px solid #F5A623;
+      border-radius: 8px;
+      box-shadow: 0 0 18px rgba(245, 166, 35, 0.15), inset 0 0 12px rgba(245, 166, 35, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem 1.4rem;
+      min-width: 110px;
+      flex: 1 1 110px;
+      max-width: 140px;
+      transition: box-shadow 0.2s;
+    }
+
+    .unit:hover {
+      box-shadow: 0 0 30px rgba(245, 166, 35, 0.35), inset 0 0 12px rgba(245, 166, 35, 0.07);
+    }
+
+    .unit .number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 8vw, 4rem);
+      line-height: 1;
+      color: #F5A623;
+      letter-spacing: 0.02em;
+      min-width: 2ch;
+      text-align: center;
+    }
+
+    .unit .label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: #aaaaaa;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+
+    /* Separator dots between units */
+    .sep {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding-bottom: 1.6rem;
+      align-self: center;
+      flex: 0 0 auto;
+    }
+
+    .sep span {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #F5A623;
+      opacity: 0.6;
+    }
+
+    /* Footer */
+    .footer {
+      font-size: 0.78rem;
+      color: #444;
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 500px) {
+      .sep { display: none; }
+      .unit { min-width: 90px; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-wrap">
+      <img src="./logo.png" alt="D'Chicken 4/2 logo" />
+    </div>
+
+    <div class="tagline">Chicken and Fries</div>
+
+    <p class="headline">15-Year Countdown</p>
+
+    <div class="countdown" id="countdown">
+      <div class="unit"><span class="number" id="years">00</span><span class="label">Years</span></div>
+      <div class="sep"><span></span><span></span></div>
+      <div class="unit"><span class="number" id="months">00</span><span class="label">Months</span></div>
+      <div class="sep"><span></span><span></span></div>
+      <div class="unit"><span class="number" id="days">00</span><span class="label">Days</span></div>
+      <div class="sep"><span></span><span></span></div>
+      <div class="unit"><span class="number" id="hours">00</span><span class="label">Hours</span></div>
+      <div class="sep"><span></span><span></span></div>
+      <div class="unit"><span class="number" id="minutes">00</span><span class="label">Minutes</span></div>
+      <div class="sep"><span></span><span></span></div>
+      <div class="unit"><span class="number" id="seconds">00</span><span class="label">Seconds</span></div>
+    </div>
+
+    <p class="footer" id="target-label"></p>
+  </div>
+
+  <script>
+    // Start date is fixed at page-load time; end date is exactly 15 years later
+    const start = new Date();
+    const end = new Date(start);
+    end.setFullYear(end.getFullYear() + 15);
+
+    // Show target date in footer
+    const opts = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('target-label').textContent =
+      'Target: ' + end.toLocaleDateString(undefined, opts);
+
+    function pad(n) {
+      return String(Math.floor(n)).padStart(2, '0');
+    }
+
+    function tick() {
+      const now = new Date();
+      let diff = end - now;
+
+      if (diff <= 0) {
+        document.getElementById('years').textContent = '00';
+        document.getElementById('months').textContent = '00';
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        return;
+      }
+
+      // Calculate years, months, days accurately via date arithmetic
+      let y = end.getFullYear() - now.getFullYear();
+      let mo = end.getMonth() - now.getMonth();
+      let d = end.getDate() - now.getDate();
+
+      if (d < 0) {
+        mo--;
+        // Days remaining in current month
+        const prev = new Date(end.getFullYear(), end.getMonth(), 0);
+        d += prev.getDate();
+      }
+      if (mo < 0) {
+        y--;
+        mo += 12;
+      }
+
+      // Remaining time within the current day
+      const h = Math.floor((diff / 1000 / 3600) % 24);
+      const m = Math.floor((diff / 1000 / 60) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('years').textContent   = pad(y);
+      document.getElementById('months').textContent  = pad(mo);
+      document.getElementById('days').textContent    = pad(d);
+      document.getElementById('hours').textContent   = pad(h);
+      document.getElementById('minutes').textContent = pad(m);
+      document.getElementById('seconds').textContent = pad(s);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
