@@ -286,7 +286,7 @@ export default async function handler(req, res) {
         from: 'D\'Chicken Countdown <hello@dchickencountdown.com>',
         to: email,
         subject: milestone.subject,
-        text: milestone.body,
+        text: milestone.body + '\n\nWatch the countdown: https://dchickencountdown.com',
       });
 
       if (error) {
