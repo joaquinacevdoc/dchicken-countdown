@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Trigger cron endpoint
         run: |
-          curl -X POST https://dchicken-countdown.vercel.app/api/cron \
+          curl -X POST https://dchickencountdown.com/api/cron \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
             --fail-with-body \
             --silent \
