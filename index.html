@@ -172,7 +172,7 @@
     // Show target date in footer
     const opts = { year: 'numeric', month: 'long', day: 'numeric' };
     document.getElementById('target-label').textContent =
-      'Target: ' + end.toLocaleDateString(undefined, opts);
+      'Coming to a location near you... ' + end.toLocaleDateString(undefined, opts);
 
     function pad(n) {
       return String(Math.floor(n)).padStart(2, '0');
