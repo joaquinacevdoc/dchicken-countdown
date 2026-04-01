@@ -28,6 +28,8 @@ Some people fear the number 13. But not us. Not when 13 years from now, D'Chicke
 
 Spoiler: it will be.
 
+While the superstitious are avoiding black cats and broken mirrors, you're out here playing the long game — patiently waiting for the chicken-and-fries combination that will make every bad day retroactively worth it.
+
 Hang tight. The fryer is patient.
 
 — The D'Chicken Countdown Team`,
@@ -39,6 +41,8 @@ Hang tight. The fryer is patient.
 12 years. A full dozen.
 
 You know what else comes in a dozen? Eggs. But we're not in the egg business. We're in the chicken-that-came-after-the-egg business, and it is going to be extraordinary.
+
+You know what else comes in a dozen? Donuts. Roses. Apostles. None of them are as exciting as what's coming on March 30, 2041.
 
 12 years from today, March 30, 2041 — D'Chicken arrives. Crispy outside. Perfect inside. Worth every single day of waiting.
 
@@ -84,6 +88,8 @@ Hold on to that image. You've earned it. Well, almost.
 
 That's less than it sounds. You've committed to longer TV series. You've waited longer for sequels. You've been in longer group chats.
 
+This is nothing. You were built for this.
+
 D'Chicken in 9 years is practically around the corner. The chicken is already thinking about you.
 
 Keep the faith. Keep the hunger.
@@ -110,13 +116,16 @@ D'Chicken, March 30, 2041. The chicken and fries that will define a generation. 
 
 Lucky number 7!
 
-Seven years until D'Chicken opens. Seven years to mentally prepare. Seven years to practice your order so you can say it confidently and without trembling.
+Seven wonders of the world. Seven deadly sins. Seven years until D'Chicken — the most important seven in human history.
+
+Seven years to mentally prepare. Seven years to practice your order so you can say it confidently and without trembling.
 
 Because when the moment finally comes, you'll want to be ready.
 
 Stretch your jaw. Loosen up. We're getting closer.
 
-— The D'Chicken Countdown Team`,
+— The D'Chicken Countdown Team
+P.S. If you've forgotten what this countdown is about, it's chicken. And fries. You're welcome.`,
   },
   6: {
     subject: "6 years out. We are entering the final act.",
@@ -154,7 +163,11 @@ FIVE YEARS. Let's go.
 
 4 years.
 
-Hold out your hand. Count four fingers. That's it. That's all that's left between you and the chicken-and-fries experience of a lifetime.
+Hold up four fingers. Now put one down every year. By the time you've put the last one down, D'Chicken will be open and you will be first in line because you have been waiting since before it was cool.
+
+4 years is nothing. 4 years is a blip. 4 years is an appetizer before the main event.
+
+And what a main event it will be.
 
 D'Chicken is no longer a distant dream. It is an approaching reality. A crispy, golden, arriving-soon reality.
 
@@ -168,7 +181,9 @@ We'll see you on the other side.
 
 THREE YEARS.
 
-The chicken knows you're coming. It can feel it. The fries are getting restless.
+The chicken is aware of you now. It knows your name. It knows what you've sacrificed. It knows you've been getting these emails since before some people's kids were born.
+
+In 3 years, it will repay you. Gloriously. Crispily. With fries.
 
 In exactly 3 years — March 30, 2041 — D'Chicken opens. This is no longer something that might happen. This is something that WILL happen. And you will be there.
 
@@ -201,10 +216,14 @@ UN.
 UNO.
 一.
 واحد.
+Ein.
+Uno anno.
 
-365 days. That's all. After 13 years of waiting, of receiving these emails, of telling anyone who would listen — you are ONE YEAR AWAY from D'Chicken.
+365 days. That's all. After 14 years of waiting, of receiving these emails, of telling anyone who would listen — you are ONE YEAR AWAY from D'Chicken.
 
-The chicken and fries that started as a countdown are about to become real life. Your patience is about to pay off in the most delicious way imaginable.
+We have sent you 14 emails. You have read 14 emails. You have waited 14 years. And it all comes down to this: 365 days from today, D'Chicken opens.
+
+Not "someday." Not "eventually." March 30, 2041. A Tuesday. A "Martes de pollos". The greatest Tuesday in recorded history.
 
 This is the last time we'll tell you to wait. Next March 30th, the doors open.
 
